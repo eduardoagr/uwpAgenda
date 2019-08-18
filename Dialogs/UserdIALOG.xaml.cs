@@ -21,28 +21,22 @@ namespace uwpContacts.Dialogs {
             switch (senderTag.Tag) {
 
                 case "FirstTextBox":
-                    TextboxTextValidation(sender, 1);
                     break;
                 case "LastNameTextBox":
-                    TextboxTextValidation(sender, 1);
                     break;
                 case "EmailTextBox":
                     break;
                 case "PhoneNumber":
-                    TextboxTextValidation(sender, 0);
+                    TextboxTextValidation(sender);
                     break;
                 default:
                     break;
             }
         }
 
-        private static void TextboxTextValidation(TextBox sender, int x) {
-            if (x == 1) {
-                sender.Text = new string(sender.Text.Where(char.IsLetter).ToArray());
-            }
-            else {
-                sender.Text = new string(sender.Text.Where(char.IsDigit).ToArray());
-            }
+        private static void TextboxTextValidation(TextBox sender) {
+
+            sender.Text = new string(sender.Text.Where(char.IsDigit).ToArray());
         }
 
         private void ContentDialog_SaveClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {

@@ -19,8 +19,6 @@ using Windows.UI.Xaml.Navigation;
 namespace uwpContacts.Controls {
     public sealed partial class ContactControl: UserControl {
 
-
-
         public Contact Contact {
             get { return (Contact)GetValue(ContactProperty); }
             set { SetValue(ContactProperty, value); }
